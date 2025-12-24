@@ -1,0 +1,69 @@
+@startuml Séquence Passage de Commande
+
+!theme plain
+skinparam backgroundColor #FFFFFF
+
+actor "Client" as Client
+participant "Interface Web" as UI
+participant "Contrôleur\nPanier" as CartCtrl
+participant "Contrôleur\nCommande" as OrderCtrl
+participant "Contrôleur\nLivraison" as DeliveryCtrl
+participant "Contrôleur\nPaiement" as PaymentCtrl
+database "Base de\nDonnées" as DB
+participant "Système\nÉvénements" as Event
+participant "Service\nEmail" as Mail
+
+Client -> UI: Clique "Procéder au paiement"
+UI -> CartCtrl: obtenirArticlesPanier()
+CartCtrl -> DB: SELECT articles_panier
+DB --> CartCtrl: Articles + Totaux
+CartCtrl --> UI: Affiche récapitulatif
+
+Client -> UI: Sélectionne mode livraison
+
+alt Livraison à domicile
+    UI -> Client: Affiche formulaire adresse
+    Client -> UI: Saisit/Sélectionne adresse
+    UI -> DeliveryCtrl: validerAdresse(données)
+    DeliveryCtrl --> UI: Adresse validée
+else Livraison point relais
+    Client -> UI: Saisit code postal
+    UI -> DeliveryCtrl: rechercherPointsRelais(code_postal)
+    DeliveryCtrl -> DB: SELECT points_relais
+    DB --> DeliveryCtrl: Liste points relais
+    DeliveryCtrl --> UI: Affiche points disponibles
+    Client -> UI: Sélectionne point relais
+end
+
+UI -> DeliveryCtrl: calculerPrixLivraison()
+DeliveryCtrl --> UI: Frais livraison
+
+Client -> UI: Applique code coupon (optionnel)
+UI -> OrderCtrl: validerCoupon(code)
+OrderCtrl -> DB: SELECT coupon
+DB --> OrderCtrl: Détails coupon
+OrderCtrl --> UI: Réduction appliquée
+
+UI -> Client: Affiche total final
+Client -> UI: Confirme et paye
+
+UI -> PaymentCtrl: simulerPaiement(données_commande)
+PaymentCtrl --> UI: Paiement réussi (simulation)
+
+UI -> OrderCtrl: creerCommande(panier, livraison, coupon)
+OrderCtrl -> DB: BEGIN TRANSACTION
+OrderCtrl -> DB: INSERT INTO commandes
+OrderCtrl -> DB: INSERT INTO articles_commande
+OrderCtrl -> DB: UPDATE produits (stock)
+OrderCtrl -> DB: UPDATE coupon (compteur_utilisation)
+OrderCtrl -> DB: DELETE articles_panier
+OrderCtrl -> DB: COMMIT
+
+OrderCtrl -> Event: déclencher(CommandeCréée)
+Event -> Mail: envoyerEmail(ConfirmationCommande, client)
+Event -> Mail: envoyerEmail(AlerteNouvelleCommande, admin)
+
+OrderCtrl --> UI: Commande créée (numero_commande)
+UI --> Client: Page confirmation avec détails
+
+@enduml

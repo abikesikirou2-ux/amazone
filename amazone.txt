@@ -1,0 +1,114 @@
+ Mini Amazon / Plateforme E-commerce 
+Contexte 
+Un commerçant veut vendre en ligne avec un système complet : panier, commandes, factures. 
+Objectifs 
+• Développer un e-commerce complet sécurisé 
+• Fournir une expérience d’achat fluide 
+Fonctionnalités 
+• Catalogues produits 
+• Panier, commandes, suivi livraison 
+• Coupons de réduction 
+• Système d’avis 
+Techniques 
+• Payment simulation 
+• Events & listeners pour envoi mails 
+• Stock management 
+
+
+
+📦 Projet 4 : Mini Amazon / Plateforme E-commerce
+🎯 Contexte Simplifié
+Un commerçant (petite entreprise ou boutique) veut créer son propre site de vente en ligne pour vendre ses produits sur internet, avec toutes les fonctionnalités essentielles d'un vrai site e-commerce.
+
+Problème à résoudre : Actuellement, le commerçant vend peut-être en magasin physique seulement, ou utilise des plateformes comme Etsy/eBay avec des frais élevés. Il veut son indépendance numérique avec un système complet qu'il contrôle.
+
+🛒 Objectifs Principaux
+Avoir une boutique en ligne professionnelle qui fonctionne 24h/24
+
+Automatiser les processus de vente (panier → commande → facture)
+
+Sécuriser les transactions et données clients
+
+Offrir une bonne expérience aux acheteurs
+
+🔧 Fonctionnalités Détaillées
+1. Catalogue Produits
+Explication : Comme une vitrine de magasin, mais en ligne
+
+Page par produit : photo, description, prix, caractéristiques
+
+Catégories : Organisation en sections (ex: Électronique, Vêtements, Maison)
+
+Recherche : Barre de recherche pour trouver rapidement un produit
+
+Filtres : Tri par prix (du - cher au + cher), nouveautés, popularité
+
+2. Système de Panier
+Explication : Comme un caddie au supermarché virtuel
+
+Ajout/Retrait : Ajouter plusieurs produits, modifier les quantités
+
+Sauvegarde : Le panier reste même si l'utilisateur quitte le site
+
+Récapitulatif : Voir le total avant de payer
+
+3. Commandes & Suivi
+Explication : Gestion complète des ventes
+
+Historique : Clients voient leurs anciennes commandes
+
+Statut : En attente → Confirmée → Expédiée → Livrée
+
+Suivi : Notification à chaque changement de statut
+
+4. Coupons & Réductions
+Explication : Système de promotion
+
+Codes promo : "ETE2025" pour -10%
+
+Réductions automatiques : Soldes, promotions flash
+
+Offres spéciales : "Achetez 2, le 3ème offert"
+
+5. Avis & Notations
+Explication : Confiance sociale
+
+Notation : ★★★★★ (1 à 5 étoiles)
+
+Commentaires : Avis écrits par les clients
+
+Photos produits : Upload par les clients (optionnel)
+
+💻 Techniques Laravel à Utiliser
+1. Simulation de Paiement
+Pourquoi simuler ? : Dans un projet scolaire/test, on ne peut pas utiliser de vrais paiements (risque légal, besoins bancaires complexes)
+Comment faire :
+
+Créer une page "Paiement" factice
+
+Utiliser un bouton "Payer maintenant" qui génère juste une commande
+
+Stocker la commande comme "payée" sans vrai transfert d'argent
+
+2. Events & Listeners (Événements & Écouteurs)
+Explication : Système automatique d'envoi d'emails
+Exemple concret :
+
+Quand un client commande → Événement "NouvelleCommande"
+
+Écouteur capte cet événement et envoie automatiquement :
+
+Email de confirmation au client
+
+Email d'alerte à l'administrateur
+
+Email de préparation au service livraison
+
+3. Gestion des Stocks
+Explication : Éviter de vendre des produits indisponibles
+
+Décompte automatique : Quand un produit est acheté, le stock diminue
+
+Alertes : Si stock < 5 → email au gérant : "Commencez à réapprovisionner!"
+
+Indisponible : Si stock = 0 → "Produit épuisé" sur la fiche

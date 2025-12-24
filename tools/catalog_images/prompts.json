@@ -1,0 +1,109 @@
+{
+  "style": {
+    "background": "clean white or light neutral",
+    "lighting": "soft studio lighting, even exposure, minimal shadows",
+    "composition": "product centered, single item, no props unless integral",
+    "quality": "high-resolution, crisp focus, e-commerce ready",
+    "exclusions": "no watermark, no brand logos, no text"
+  },
+  "categories": {
+    "fashion-accessories": [
+      "T-shirt",
+      "Jeans",
+      "Leather jacket",
+      "Evening dress",
+      "Sneakers",
+      "Boots",
+      "Handbag",
+      "Belt",
+      "Sunglasses",
+      "Watch",
+      "Costume jewelry",
+      "Scarf"
+    ],
+    "electronics-high-tech": [
+      "Smartphone",
+      "Tablet",
+      "Laptop",
+      "PC monitor",
+      "Television",
+      "Headphones",
+      "Bluetooth speaker",
+      "Digital camera",
+      "Drone",
+      "Game console",
+      "Power bank",
+      "Keyboard and mouse"
+    ],
+    "home-decoration": [
+      "Sofa",
+      "Coffee table",
+      "Designer chair",
+      "Bedside lamp",
+      "Curtains",
+      "Rug",
+      "Bed linen",
+      "Tableware",
+      "Bookshelf",
+      "Decorative mirror",
+      "Artificial plant",
+      "Wall clock"
+    ],
+    "beauty-health": [
+      "Moisturizer",
+      "Face serum",
+      "Foundation",
+      "Lipstick",
+      "Mascara",
+      "Perfume",
+      "Shampoo",
+      "Hair care product",
+      "Hair brush",
+      "Dietary supplement",
+      "Essential oil",
+      "Manicure product"
+    ],
+    "food-drinks": [
+      "Fresh fruits",
+      "Organic vegetables",
+      "Pasta",
+      "Rice",
+      "Biscuits",
+      "Chocolates",
+      "Coffee",
+      "Tea",
+      "Fruit juice",
+      "Red wine",
+      "Craft beer",
+      "Olive oil"
+    ],
+    "sports-leisure": [
+      "Football",
+      "Tennis racket",
+      "Bicycle",
+      "Yoga mat",
+      "Dumbbells",
+      "Boxing gloves",
+      "Skateboard",
+      "Board game",
+      "Puzzle",
+      "Educational toy",
+      "Musical instrument",
+      "Video game"
+    ],
+    "automotive-diy": [
+      "Tire",
+      "Car battery",
+      "Motor oil",
+      "Tool kit",
+      "Electric drill",
+      "Hammer",
+      "Wall paint",
+      "Ladder",
+      "Lawn mower",
+      "Work gloves",
+      "Auto spare parts",
+      "Pressure washer"
+    ]
+  }
+}

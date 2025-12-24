@@ -1,0 +1,121 @@
+[
+  {
+    "category": "Fashion & Accessories",
+    "items": [
+      {"name": "T-shirts", "prompt": "studio product photograph of a plain unbranded t-shirt, centered, on white seamless background, softbox lighting, crisp edges, high detail, clean fabric texture, no mannequin head, no text, no logo, no watermark"},
+      {"name": "jeans", "prompt": "studio product photo of classic unbranded blue jeans folded neatly, centered, on white background, soft diffused lighting, high detail denim texture, no logo, no watermark, no text"},
+      {"name": "leather jackets", "prompt": "studio product photo of an unbranded black leather jacket on invisible mannequin, centered, white seamless backdrop, professional lighting, realistic leather texture, no logo, no watermark"},
+      {"name": "evening dresses", "prompt": "studio product photograph of an elegant unbranded evening dress on a hanger or invisible mannequin, centered, white background, soft lighting, smooth fabric, no logo, no watermark, no text"},
+      {"name": "sneakers", "prompt": "studio product photo of unbranded white sneakers angled 45 degrees, centered, white background, softbox lighting, clean soles, no logo, no watermark, no text"},
+      {"name": "boots", "prompt": "studio product photo of unbranded leather boots, centered, white seamless background, professional lighting, sharp focus, no logo, no watermark, no text"},
+      {"name": "handbags", "prompt": "studio product photo of an unbranded leather handbag, centered, white background, soft lighting, high detail stitching, no logo, no watermark, no text"},
+      {"name": "belts", "prompt": "studio product photograph of an unbranded leather belt coiled, centered, on white background, soft lighting, macro detail on buckle, no logo, no watermark, no text"},
+      {"name": "sunglasses", "prompt": "studio product photo of unbranded sunglasses, centered, white background, soft reflections, professional lighting, anti-reflective clarity, no logo, no watermark, no text"},
+      {"name": "watches", "prompt": "studio product photograph of an unbranded wristwatch, centered, white background, soft diffused lighting, crisp focus, visible dial, no logo, no watermark, no text"},
+      {"name": "costume jewelry", "prompt": "studio product photo of unbranded costume jewelry necklace and earrings set, centered, white background, soft lighting, sparkle highlights, no logo, no watermark, no text"},
+      {"name": "scarves", "prompt": "studio product photo of an unbranded scarf neatly folded or gently draped, centered, white background, soft lighting, fabric texture visible, no logo, no watermark, no text"}
+    ]
+  },
+  {
+    "category": "Electronics & High-Tech",
+    "items": [
+      {"name": "smartphones", "prompt": "studio product photo of an unbranded smartphone front and back, centered, white background, glossy screen reflections controlled, softbox lighting, no logo, no watermark, no text"},
+      {"name": "tablets", "prompt": "studio product photograph of an unbranded tablet, centered, white background, professional soft lighting, thin bezels, no logo, no watermark, no text"},
+      {"name": "laptops", "prompt": "studio product photo of an unbranded laptop slightly open, centered, white background, softbox lighting, crisp edges, no logo, no watermark, no text"},
+      {"name": "PC monitors", "prompt": "studio product photograph of an unbranded pc monitor, centered, white seamless background, balanced reflections, soft lighting, no logo, no watermark, no text"},
+      {"name": "televisions", "prompt": "studio product photo of an unbranded modern television, centered, white background, controlled reflections, soft professional lighting, no logo, no watermark, no text"},
+      {"name": "headphones", "prompt": "studio product photograph of unbranded over-ear headphones, centered, white background, soft shadows, high detail, no logo, no watermark, no text"},
+      {"name": "Bluetooth speakers", "prompt": "studio product photo of an unbranded bluetooth speaker, centered, white background, softbox lighting, clean minimal design, no logo, no watermark, no text"},
+      {"name": "digital cameras", "prompt": "studio product photograph of an unbranded digital camera, centered, white background, soft reflections, detailed lens, no brand, no logo, no watermark, no text"},
+      {"name": "drones", "prompt": "studio product photo of an unbranded quadcopter drone, centered, white background, professional lighting, clean propellers, no logo, no watermark, no text"},
+      {"name": "game consoles", "prompt": "studio product photograph of an unbranded game console with controller, centered, white background, soft lighting, no logo, no watermark, no text"},
+      {"name": "power banks", "prompt": "studio product photo of an unbranded power bank, centered, white background, softbox lighting, clean design, no logo, no watermark, no text"},
+      {"name": "keyboards & mice", "prompt": "studio product photo of an unbranded keyboard and mouse set, centered, white background, soft lighting, high detail keys, no logo, no watermark, no text"}
+    ]
+  },
+  {
+    "category": "Home & Decoration",
+    "items": [
+      {"name": "sofas", "prompt": "studio product photo of a modern unbranded sofa, centered, white background, soft studio lighting, fabric texture, no logo, no watermark, no text"},
+      {"name": "coffee tables", "prompt": "studio product photograph of an unbranded coffee table, centered, white background, soft shadows, wood texture, no logo, no watermark, no text"},
+      {"name": "designer chairs", "prompt": "studio product photo of an unbranded designer chair, centered, white background, soft lighting, no logo, no watermark, no text"},
+      {"name": "bedside lamps", "prompt": "studio product photograph of an unbranded bedside lamp, centered, white background, soft lighting, clear shape, no logo, no watermark, no text"},
+      {"name": "curtains", "prompt": "studio product photo of unbranded curtains neatly hung or folded, centered, white background, soft lighting, fabric detail, no logo, no watermark, no text"},
+      {"name": "rugs", "prompt": "studio product photo of an unbranded rug rolled or partially unrolled, centered, white background, soft lighting, textile detail, no logo, no watermark, no text"},
+      {"name": "bed linen", "prompt": "studio product photograph of unbranded bed linen set folded, centered, white background, soft lighting, clean fabric texture, no logo, no watermark, no text"},
+      {"name": "tableware", "prompt": "studio product photo of unbranded tableware set, centered, white background, soft lighting, porcelain texture, no logo, no watermark, no text"},
+      {"name": "bookshelves", "prompt": "studio product photograph of an unbranded bookshelf, centered, white background, soft lighting, wood texture, no logo, no watermark, no text"},
+      {"name": "decorative mirrors", "prompt": "studio product photo of an unbranded decorative mirror, centered, white background, controlled reflections, soft lighting, no logo, no watermark, no text"},
+      {"name": "artificial plants", "prompt": "studio product photograph of unbranded artificial plant, centered, white background, soft lighting, realistic leaves, no logo, no watermark, no text"},
+      {"name": "wall clocks", "prompt": "studio product photo of an unbranded wall clock, centered, white background, soft lighting, clean dial, no logo, no watermark, no text"}
+    ]
+  },
+  {
+    "category": "Beauty & Health",
+    "items": [
+      {"name": "moisturizers", "prompt": "studio product photo of an unbranded moisturizer jar, centered, white background, soft lighting, clean label area, no text, no logo, no watermark"},
+      {"name": "face serums", "prompt": "studio product photograph of an unbranded face serum dropper bottle, centered, white background, soft lighting, glossy glass, no logo, no watermark, no text"},
+      {"name": "foundations", "prompt": "studio product photo of unbranded foundation bottle, centered, white background, soft lighting, no logo, no watermark, no text"},
+      {"name": "lipsticks", "prompt": "studio product photograph of an unbranded lipstick tube open, centered, white background, soft lighting, crisp detail, no logo, no watermark, no text"},
+      {"name": "mascaras", "prompt": "studio product photo of an unbranded mascara tube with wand, centered, white background, soft lighting, no logo, no watermark, no text"},
+      {"name": "perfumes", "prompt": "studio product photograph of an unbranded perfume bottle, centered, white background, soft lighting, controlled reflections, no logo, no watermark, no text"},
+      {"name": "shampoos", "prompt": "studio product photo of an unbranded shampoo bottle, centered, white background, soft lighting, no logo, no watermark, no text"},
+      {"name": "hair care products", "prompt": "studio product photograph of unbranded hair care product bottles, centered, white background, soft lighting, no logo, no watermark, no text"},
+      {"name": "hair brushes", "prompt": "studio product photo of an unbranded hair brush, centered, white background, soft lighting, no logo, no watermark, no text"},
+      {"name": "dietary supplements", "prompt": "studio product photo of an unbranded supplements pill bottle, centered, white background, soft lighting, clean label area, no logo, no watermark, no text"},
+      {"name": "essential oils", "prompt": "studio product photograph of unbranded essential oil amber bottle, centered, white background, soft lighting, no logo, no watermark, no text"},
+      {"name": "manicure products", "prompt": "studio product photo of unbranded manicure set (nail polish bottles), centered, white background, soft lighting, no logo, no watermark, no text"}
+    ]
+  },
+  {
+    "category": "Food & Drinks",
+    "items": [
+      {"name": "fresh fruits", "prompt": "studio product photo of assorted fresh fruits arrangement, centered, white background, soft lighting, vibrant but natural colors, no logo, no watermark, no text"},
+      {"name": "organic vegetables", "prompt": "studio product photograph of assorted organic vegetables, centered, white background, soft lighting, natural colors, no logo, no watermark, no text"},
+      {"name": "pasta", "prompt": "studio product photo of unbranded pasta package or loose pasta in bowl, centered, white background, soft lighting, no logo, no watermark, no text"},
+      {"name": "rice", "prompt": "studio product photograph of unbranded rice package or bowl of rice, centered, white background, soft lighting, no logo, no watermark, no text"},
+      {"name": "biscuits", "prompt": "studio product photo of unbranded biscuits neatly stacked, centered, white background, soft lighting, no logo, no watermark, no text"},
+      {"name": "chocolates", "prompt": "studio product photograph of unbranded chocolates arranged, centered, white background, soft lighting, no logo, no watermark, no text"},
+      {"name": "coffee", "prompt": "studio product photo of unbranded coffee beans and a plain bag, centered, white background, soft lighting, no logo, no watermark, no text"},
+      {"name": "teas", "prompt": "studio product photograph of unbranded tea canister or tea bags, centered, white background, soft lighting, no logo, no watermark, no text"},
+      {"name": "fruit juices", "prompt": "studio product photo of unbranded fruit juice bottle, centered, white background, soft lighting, no logo, no watermark, no text"},
+      {"name": "red wines", "prompt": "studio product photograph of unbranded red wine bottle, centered, white background, soft lighting, controlled reflections, no logo, no watermark, no text"},
+      {"name": "craft beers", "prompt": "studio product photo of unbranded craft beer bottle or can, centered, white background, soft lighting, no logo, no watermark, no text"},
+      {"name": "olive oils", "prompt": "studio product photograph of an unbranded olive oil bottle, centered, white background, soft lighting, no logo, no watermark, no text"}
+    ]
+  },
+  {
+    "category": "Sports & Leisure",
+    "items": [
+      {"name": "footballs", "prompt": "studio product photo of an unbranded football (soccer ball), centered, white background, soft lighting, no logo, no watermark, no text"},
+      {"name": "tennis rackets", "prompt": "studio product photograph of an unbranded tennis racket, centered, white background, soft lighting, no logo, no watermark, no text"},
+      {"name": "bicycles", "prompt": "studio product photo of an unbranded bicycle side view, centered, white background, soft lighting, no logo, no watermark, no text"},
+      {"name": "yoga mats", "prompt": "studio product photo of an unbranded yoga mat rolled, centered, white background, soft lighting, no logo, no watermark, no text"},
+      {"name": "dumbbells", "prompt": "studio product photograph of unbranded dumbbells, centered, white background, soft lighting, no logo, no watermark, no text"},
+      {"name": "boxing gloves", "prompt": "studio product photo of unbranded boxing gloves, centered, white background, soft lighting, no logo, no watermark, no text"},
+      {"name": "skateboards", "prompt": "studio product photograph of an unbranded skateboard, centered, white background, soft lighting, no logo, no watermark, no text"},
+      {"name": "board games", "prompt": "studio product photo of an unbranded board game box set, centered, white background, soft lighting, no logo, no watermark, no text"},
+      {"name": "puzzles", "prompt": "studio product photograph of an unbranded puzzle box, centered, white background, soft lighting, no logo, no watermark, no text"},
+      {"name": "educational toys", "prompt": "studio product photo of unbranded educational toy set, centered, white background, soft lighting, no logo, no watermark, no text"},
+      {"name": "musical instruments", "prompt": "studio product photograph of an unbranded acoustic guitar (or small instrument), centered, white background, soft lighting, no logo, no watermark, no text"},
+      {"name": "video games", "prompt": "studio product photo of an unbranded generic game cover (abstract), centered, white background, soft lighting, no logo, no watermark, no text"}
+    ]
+  },
+  {
+    "category": "Automotive & DIY",
+    "items": [
+      {"name": "tires", "prompt": "studio product photo of an unbranded car tire, centered, white background, soft lighting, tread detail, no logo, no watermark, no text"},
+      {"name": "car batteries", "prompt": "studio product photograph of an unbranded car battery, centered, white background, soft lighting, no logo, no watermark, no text"},
+      {"name": "motor oils", "prompt": "studio product photo of an unbranded motor oil plastic bottle, centered, white background, soft lighting, no logo, no watermark, no text"},
+      {"name": "tool kits", "prompt": "studio product photograph of an unbranded tool kit case open, centered, white background, soft lighting, no logo, no watermark, no text"},
+      {"name": "electric drills", "prompt": "studio product photo of an unbranded electric drill, centered, white background, soft lighting, no logo, no watermark, no text"},
+      {"name": "hammers", "prompt": "studio product photograph of an unbranded hammer, centered, white background, soft lighting, no logo, no watermark, no text"},
+      {"name": "wall paints", "prompt": "studio product photo of an unbranded paint can, centered, white background, soft lighting, no logo, no watermark, no text"},
+      {"name": "ladders", "prompt": "studio product photograph of an unbranded ladder, centered, white background, soft lighting, no logo, no watermark, no text"},
+      {"name": "lawn mowers", "prompt": "studio product photo of an unbranded lawn mower, centered, white background, soft lighting, no logo, no watermark, no text"},
+      {"name": "work gloves", "prompt": "studio product photograph of unbranded work gloves, centered, white background, soft lighting, no logo, no watermark, no text"},
+      {"name": "auto spare parts", "prompt": "studio product photo of unbranded generic auto spare part, centered, white background, soft lighting, no logo, no watermark, no text"},
+      {"name": "pressure washers", "prompt": "studio product photograph of an unbranded pressure washer, centered, white background, soft lighting, no logo, no watermark, no text"}
+    ]
+  }
+]

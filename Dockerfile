@@ -10,13 +10,18 @@ COPY resources ./resources
 COPY vite.config.js postcss.config.js tailwind.config.js ./
 RUN npm run build
 
-# 2) Install PHP dependencies using official composer image
-FROM composer:2 AS composer_builder
+# 2) Install PHP dependencies using PHP 8.2 base and Composer
+FROM php:8.2-cli-alpine AS composer_builder
 WORKDIR /app
+# Install system deps and Composer
+RUN apk add --no-cache --virtual .composer-deps curl git unzip libzip-dev icu-dev zlib-dev oniguruma-dev \
+    && curl -sS https://getcomposer.org/installer | php -- --install-dir=/usr/local/bin --filename=composer \
+    && composer --version
 COPY composer.json composer.lock ./
-RUN composer install --no-dev --prefer-dist --no-progress --no-interaction --optimize-autoloader
+RUN COMPOSER_ALLOW_SUPERUSER=1 COMPOSER_MEMORY_LIMIT=-1 composer install --no-dev --prefer-dist --no-progress --no-interaction --optimize-autoloader
 COPY . .
-RUN composer dump-autoload --optimize
+RUN composer dump-autoload --optimize \
+    && apk del .composer-deps || true
 
 # 3) Production image
 FROM php:8.2-cli-alpine

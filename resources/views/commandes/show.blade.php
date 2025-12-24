@@ -146,6 +146,7 @@
             <div class="bg-white rounded-xl shadow p-6 mt-6">
                 <h2 class="text-xl font-bold mb-3">Suivi en temps réel du livreur</h2>
                 <div id="map-client" class="w-full h-80 rounded-lg border"></div>
+                <div class="mt-2 text-sm text-red-600" id="map-status" style="display:none">Service itinéraire hors ligne</div>
                 <div class="mt-3 text-xs text-gray-500" id="client-last-seen">Dernière activité livreur: —</div>
             </div>
 
@@ -180,10 +181,14 @@
     const destinationProvided = @json($commande->pointRelais && $commande->pointRelais->latitude && $commande->pointRelais->longitude ? [$commande->pointRelais->latitude, $commande->pointRelais->longitude] : null);
 
     const map = L.map('map-client').setView([6.1349, 1.2225], 13); // Default center
-    L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+    const tileLayer = L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
         maxZoom: 19,
         attribution: '© OpenStreetMap'
     }).addTo(map);
+
+    tileLayer.on('tileerror', function(){
+        showMapStatus('Cartes indisponibles (tuiles hors ligne)');
+    });
 
     let livreurMarker = null;
     let destinationMarker = null;
@@ -195,10 +200,12 @@
         }).then(r => r.json()).then(results => {
             if (results && results.length > 0) {
                 const { lat, lon } = results[0];
+                hideMapStatus();
                 return [parseFloat(lat), parseFloat(lon)];
             }
+            showMapStatus('Adresse introuvable');
             throw new Error('Destination introuvable');
-        });
+        }).catch(()=>{ showMapStatus('Service de géocodage hors ligne'); throw new Error('Géocoding failed'); });
     }
 
     function setDestination(coords) {
@@ -210,6 +217,18 @@
         const coords = [lat, lng];
         if (livreurMarker) { livreurMarker.setLatLng(coords); }
         else { livreurMarker = L.marker(coords, { title: 'Livreur' }).addTo(map); }
+    }
+
+    function showMapStatus(msg){
+        const el = document.getElementById('map-status');
+        if (!el) return;
+        el.textContent = msg;
+        el.style.display = 'block';
+    }
+    function hideMapStatus(){
+        const el = document.getElementById('map-status');
+        if (!el) return;
+        el.style.display = 'none';
     }
 
     function pollPosition(){
@@ -234,11 +253,15 @@
         if (!toCoords) return;
         const url = 'https://router.project-osrm.org/route/v1/driving/' + [fromLng, fromLat].join(',') + ';' + [toCoords[1], toCoords[0]].join(',') + '?overview=full&geometries=geojson';
         fetch(url).then(r => r.json()).then(json => {
-            if (!json || !json.routes || !json.routes[0]) return;
+            if (!json || !json.routes || !json.routes[0]) {
+                showMapStatus('Service itinéraire hors ligne');
+                return;
+            }
             const geo = json.routes[0].geometry;
             if (routeLayer) { map.removeLayer(routeLayer); }
             routeLayer = L.geoJSON(geo, { style: { color: '#2563eb', weight: 4, opacity: 0.8 } }).addTo(map);
-        }).catch(()=>{});
+            hideMapStatus();
+        }).catch(()=>{ showMapStatus('Service itinéraire hors ligne'); });
     }
 
     if (destinationProvided) {

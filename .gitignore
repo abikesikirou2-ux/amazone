@@ -1,3 +1,42 @@
+# Laravel / PHP
+/vendor/
+/bootstrap/cache/
+/storage/*.key
+/storage/app/public
+/storage/framework/cache/*
+/storage/framework/sessions/*
+/storage/framework/testing/*
+/storage/framework/views/*
+/.env
+/.env.*
+/phpunit.cache/
+composer.lock
+
+# Node / Frontend
+/node_modules/
+/public/build/
+/public/hot
+/public/storage
+pnpm-lock.yaml
+yarn.lock
+package-lock.json
+
+# IDE / OS
+/.idea/
+/.vscode/
+.DS_Store
+Thumbs.db
+
+# Coverage / Logs
+coverage/
+.phpunit.result.cache
+/storage/logs/*.log
+
+# Misc
+*.cache
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
 *.log
 .DS_Store
 .env

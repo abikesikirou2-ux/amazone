@@ -1,0 +1,12 @@
+node_modules
+vendor
+.git
+.env
+.env.*
+.idea
+.vscode
+storage/debugbar
+storage/*.sqlite
+public/storage
+npm-debug.log
+yarn-error.log

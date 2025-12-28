@@ -33,7 +33,7 @@
             <div class="flex justify-between"><span>Livraison</span><span>{{ $commande->modeLivraison->nom }}</span></div>
         </div>
         <div class="mt-6 flex gap-3 justify-center">
-            @if($commande->statut !== 'payee')
+            @if($commande->statut !== 'confirmee')
             <form action="{{ route('commande.payer', $commande->id) }}" method="POST">
                 @csrf
                 <button type="submit" class="bg-green-600 text-white px-6 py-3 rounded-lg font-semibold hover:bg-green-700">

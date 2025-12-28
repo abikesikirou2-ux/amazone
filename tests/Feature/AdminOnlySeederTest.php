@@ -25,7 +25,7 @@ class AdminOnlySeederTest extends TestCase
         $this->assertEquals(1, User::query()->count());
         $admin = User::query()->first();
         $this->assertNotNull($admin);
-        $this->assertEquals('admin@miniamaz.cd', $admin->email);
+        $this->assertEquals('miniamazone555@gmail.com', $admin->email);
         $this->assertEquals('admin', $admin->role);
         $this->assertNotNull($admin->email_verified_at);
 

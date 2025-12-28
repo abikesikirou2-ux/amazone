@@ -161,7 +161,7 @@ class CommandeController extends Controller
                 MouvementStock::enregistrer(
                     $article->produit_id,
                     $article->quantite,
-                    'vente',
+                    'sortie',
                     $commande->id,
                     'Commande ' . $commande->numero_commande
                 );
@@ -234,7 +234,7 @@ class CommandeController extends Controller
                         // Email au client avec le code et la date d'expiration via Mailable
                         try {
                             Mail::to(Auth::user()->email)->send(new CouponFidelite(Auth::user(), $newCoupon));
-                        } catch (\\Throwable $e) {
+                        } catch (\Throwable $e) {
                             \Log::error('Envoi email coupon auto échoué: ' . $e->getMessage());
                         }
 
@@ -246,8 +246,8 @@ class CommandeController extends Controller
                                     Mail::to($adminEmail)->send(new AdminNotificationCoupon(Auth::user(), $newCoupon));
                                 }
                             }
-                        } catch (\\Throwable $e) {
-                            \\Log::error('Notification admin coupon auto échouée: ' . $e->getMessage());
+                        } catch (\Throwable $e) {
+                            \Log::error('Notification admin coupon auto échouée: ' . $e->getMessage());
                         }
                     }
                 }
@@ -280,7 +280,8 @@ class CommandeController extends Controller
             ->findOrFail($id);
 
         // Simuler paiement: statut et horodatage
-        $commande->statut = 'payee';
+        // On utilise un statut valide du enum (confirmee) pour représenter paiement confirmé
+        $commande->statut = 'confirmee';
         $commande->recu_le = now();
         $commande->save();
 
@@ -306,8 +307,8 @@ class CommandeController extends Controller
             \Log::warning('Notification admin commande lancée non envoyée: ' . $e->getMessage());
         }
 
-        // Télécharger automatiquement
-        return response()->download(storage_path('app/' . $path), $fileName);
+        // Télécharger automatiquement via le disque afin que Storage::fake() fonctionne en tests
+        return Storage::disk('local')->download($path, $fileName);
     }
 
     public function scanner()

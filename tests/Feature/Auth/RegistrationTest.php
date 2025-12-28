@@ -26,6 +26,7 @@ class RegistrationTest extends TestCase
         ]);
 
         $this->assertAuthenticated();
-        $response->assertRedirect(route('dashboard', absolute: false));
+        // Lorsque la vérification d'email est requise, l'utilisateur est redirigé vers la notice de vérification
+        $response->assertRedirect(route('verification.notice', absolute: false));
     }
 }

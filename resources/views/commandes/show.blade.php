@@ -127,7 +127,7 @@
                         <i class="fas fa-route mr-2"></i>
                         Itinéraire affiché sur la carte (OpenStreetMap)
                     </div>
-                    @if($commande->statut !== 'payee')
+                    @if($commande->statut !== 'confirmee')
                     <form action="{{ route('commande.payer', $commande->id) }}" method="POST">
                         @csrf
                         <button type="submit" class="w-full inline-flex items-center justify-center px-4 py-2 rounded bg-green-600 text-white font-semibold hover:bg-green-700">

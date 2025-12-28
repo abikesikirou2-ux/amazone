@@ -45,7 +45,7 @@ jobs:
             node_modules
             .env
             vendor/bin
-          git-ftp-args: --insecure
+
 
       - name: Run post-deploy commands via SSH
         uses: appleboy/ssh-action@v0.1.8

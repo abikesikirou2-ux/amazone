@@ -31,7 +31,7 @@ jobs:
           npm run build
 
       - name: FTP Deploy to Alwaysdata
-        uses: SamKirkland/FTP-Deploy-Action@4.4.0
+        uses: SamKirkland/FTP-Deploy-Action@4
         with:
           server: ${{ secrets.FTP_HOST }}
           username: ${{ secrets.FTP_USERNAME }}

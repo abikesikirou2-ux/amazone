@@ -1,0 +1,46 @@
+name: Deploy to Alwaysdata via FTP
+
+on:
+  push:
+    branches: [ main ]
+
+jobs:
+  build_and_deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Set up PHP
+        uses: shivammathur/setup-php@v2
+        with:
+          php-version: '8.2'
+
+      - name: Install Composer dependencies
+        run: composer install --no-dev --prefer-dist --no-progress --no-suggest --optimize-autoloader
+
+      # Optional: build frontend assets if you use them (uncomment if needed)
+      #- name: Install Node and build assets
+      #  run: |
+      #    npm ci
+      #    npm run build
+
+      - name: FTP Deploy to Alwaysdata
+        uses: SamKirkland/FTP-Deploy-Action@4.4.0
+        with:
+          server: ${{ secrets.FTP_HOST }}
+          username: ${{ secrets.FTP_USERNAME }}
+          password: ${{ secrets.FTP_PASSWORD }}
+          server-dir: ${{ secrets.FTP_TARGET_DIR }}
+          local-dir: ./
+          exclude: |
+            .git*
+            .github
+            tests
+            node_modules
+            .env
+            vendor/bin
+          git-ftp-args: --insecure
+
+      - name: Done
+        run: echo "Deployment finished. Check Alwaysdata and logs for post-deploy tasks."

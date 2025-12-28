@@ -30,6 +30,30 @@ jobs:
           npm ci
           npm run build
 
+      - name: Resolve and test SSH host from runner
+        run: |
+          HOST="${{ secrets.SSH_HOST }}"
+          PORT="${{ secrets.SSH_PORT }}"
+          echo "Resolving $HOST"
+          getent hosts "$HOST" || nslookup "$HOST" || host "$HOST" || true
+          echo "Testing TCP/$PORT"
+          timeout 5 bash -c "</dev/tcp/$HOST/$PORT" && echo "TCP open on $PORT" || echo "TCP closed or filtered on $PORT"
+        shell: bash
+
+      - name: Test SSH connectivity (debug, non-blocking)
+        uses: appleboy/ssh-action@v0.1.8
+        continue-on-error: true
+        with:
+          host: ${{ secrets.SSH_HOST }}
+          username: ${{ secrets.SSH_USER }}
+          key: ${{ secrets.SSH_PRIVATE_KEY }}
+          port: ${{ secrets.SSH_PORT }}
+          script: |
+            echo "SSH test start"
+            uname -a || true
+            id || true
+            echo "SSH test end"
+
       - name: Upload files via SCP
         uses: appleboy/scp-action@v1
         with:
@@ -40,15 +64,7 @@ jobs:
           source: "./"
           target: ${{ secrets.FTP_TARGET_DIR }}
           strip_components: 1
-          exclude: |
-            .git
-            .github
-            tests
-            node_modules
-            .env
-            vendor/bin
-          recursive: true
-          compress: true
+          overwrite: true
 
 
       - name: Run post-deploy commands via SSH
